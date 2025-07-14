@@ -4,8 +4,8 @@
     font-family: 'Inter Variable';
     src: 
         url('./Inter-Variable.woff2') format('woff2-variations'),
-        url('./Inter-Variable.woff2') format('woff2');
-    font-weight: 400 700;
+        url('./Inter-Variable.woff2') format('woff2 supports variations');
+    font-weight: 400 785;
     font-variation-settings: 'wght' 400;
     font-display: swap;
 }
