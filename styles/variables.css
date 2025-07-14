@@ -1,1 +1,30 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+
+:root {
+    --font-family-main: 'Inter Variable', sans-serif;
+    --font-family-accent: 'Press Start 2P', fantasy;
+    --button-font-family: 'Press Start 2P', fantasy;  
+    --title-size: clamp(2.5rem, 8vw, 4rem); 
+    --subtitle-size: clamp(1rem, 3vw, 1.5rem);
+    --title-font-size-card: clamp(1rem, 1vw + 0.75rem, 1.125rem); 
+    --font-size-label: clamp(0.75rem, 0.5vw + 0.6875rem, 0.875rem);
+    --color-text: #000000;
+    --button-font-size: clamp(0.75rem, 0.8vw + 0.5rem, 0.875rem);
+    --main-font-size: clamp(1rem, 0.75vw + 0.875rem, 1.125rem);
+    --font-weight-card-text: 400;
+    --font-weight-card-title: 700; 
+    --border-card: solid 2px #000000;
+    --border-button: solid 2px #000000;;
+    --title-size-mobile: clamp(1.8rem, 4vw + 0.5rem, 2.5rem);
+    --subtitle-size-mobile: clamp(0.75rem, 1.5vw + 0.25rem, 0.875rem);
+    --content-width: clamp(18.75rem, 85vw, 43.75rem);
+    --label-stroke-color: rgba(255, 255, 255, 0.7);  
+    --label-bg-color: rgba(0, 0, 0, 0.5); 
+    --linear-gradient-bg: 
+      repeating-linear-gradient(to right, #d3d3d3,#d3d3d3 2px, transparent 2px,transparent 4px),
+      repeating-linear-gradient(to bottom, #d3d3d3,#d3d3d3 2px, transparent 2px, transparent 4px),
+      linear-gradient(to bottom,#e7e7e7 0%,#e7e7e7 0.01%, #1a1a1a 100%);
+    --bg-color-button: white;
+    --contour-color: #000; 
+    --animation-fill-color: #ff0000; 
+}
