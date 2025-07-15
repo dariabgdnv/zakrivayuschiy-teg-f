@@ -3,7 +3,8 @@
 :root {
   --font-family-main: 'Inter Variable', sans-serif;
   --font-family-accent: 'Press Start 2P', fantasy;
-  --button-font-family: 'Press Start 2P', fantasy;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
   --title-size: clamp(2.5rem, 8vw, 4rem);
   --subtitle-size: clamp(1rem, 3vw, 1.5rem);
   --title-font-size-card: clamp(1rem, 1vw + 0.75rem, 1.125rem);
@@ -18,8 +19,11 @@
   --title-size-mobile: clamp(1.8rem, 4vw + 0.5rem, 2.5rem);
   --subtitle-size-mobile: clamp(0.75rem, 1.5vw + 0.25rem, 0.875rem);
   --content-width: clamp(18.75rem, 85vw, 43.75rem);
-  --label-stroke-color: rgba(255, 255, 255, 0.7);
-  --label-bg-color: rgba(0, 0, 0, 0.5);
+  --label-text-color: black;
+  /* --label-stroke-color: solid 1px white;  */
+  --label-stroke-color: white; 
+  --label-bg-color: transparent;
+  --label-opacity: 0.9;
   --linear-gradient-bg:
     repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
     repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),

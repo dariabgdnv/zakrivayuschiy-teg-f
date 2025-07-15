@@ -28,14 +28,14 @@
 .header {
   width: 100%;
   max-width: 700px;
-  height: 368px;
-  min-height: 368px;
+  padding-block: 128px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
   justify-content: center;
   border: var(--border-card);
+  background-color: white;
 }
 
 .title {
@@ -60,7 +60,7 @@
 .list_card {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 49px;
 }
 
 .title_card {
@@ -68,6 +68,7 @@
   width: calc(100% + 40px);
   padding: 3px 0 3px 0;
   margin-left: -15px;
+  font-variation-settings: var(--font-weight-bold);
 }
 
 .card {
@@ -78,8 +79,9 @@
 }
 
 .container_image {
-  width: calc(100% + 50px);
-  margin: 0 -25px;
+  width: calc(100% + 50px); 
+  /* height: 696px; */
+  transform: translateX(-25px); 
   aspect-ratio: 1/1;
 }
 
@@ -93,20 +95,20 @@
   border-bottom: solid 2px black;
 }
 
-.image_zero-card {
+.image_filter-blur {
   filter: blur(3px);
 }
 
-.image_sprint-beginning {
+.image_filter-saturate {
   filter: saturate(500%);
 }
 
-.image_sprint-fear {
+.image_filter-brightness {
   filter:
     brightness(1.1) contrast(3.15) saturate(1.6) hue-rotate(-5deg);
 }
 
-.image_sprint-desigions {
+.image_filter-hue-rotate {
   filter: hue-rotate(10deg);
 }
 
@@ -132,16 +134,18 @@
 
 .text_card {
   font-size: var(--main-font-size);
+  font-variation-settings: var(--font-weight-normal);
 }
 
 .label {
   font-family: var(--font-family-accent);
   font-size: var(--font-size-label);
   position: absolute;
-  top: 58px;
+  top: 30px;
   right: 25px;
   background-color: var(--label-bg-color);
-  color: black;
+  color: var(--label-text-color);
+  opacity: var(--label-opacity);
   mix-blend-mode: hard-light;
   text-shadow:
     -1px -1px 0 var(--label-stroke-color),
@@ -151,7 +155,8 @@
 }
 
 @supports (-webkit-text-stroke: 1px var(--label-stroke-color)) or (text-stroke: 1px var(--label-stroke-color)) {
-  .card-label {
+  .label {
+    color: var(--label-text-color);
     text-shadow: none;
     -webkit-text-stroke: 1px var(--label-stroke-color);
     text-stroke: 1px var(--label-stroke-color);
@@ -214,13 +219,13 @@
 .text-card_container {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding-block-start: 22px;
-  padding-inline: 25px;
+  gap: 20px;
+  padding-block-start: 17px;
 }
 
 .card__actions {
   padding-block: 25px;
+  gap: 5px;
   display: flex;
   justify-content: flex-end;
 }
@@ -228,7 +233,7 @@
 .card__like-button {
   display: flex;
   align-items: center;
-  padding: 12px 37px;
+  padding: 11px 35px;
   position: relative;
   transition: border-color 0.3s ease;
 }
@@ -237,22 +242,32 @@
   border-color: black;
 }
 
+.button__icon-like {
+  display: grid;
+  place-items: center; 
+  background-color: inherit;
+  border: none;
+  padding: 0;
+}
+
+.button__icon-like:focus-visible {
+  outline: solid 2px black;
+  outline-offset: -2px;
+}
+
 .like-icon {
   flex-shrink: 0;
-  position: absolute;
-  left: -47px;
   transition: border-color 0.3s ease;
 }
 
 .card__like-button:focus-visible::after {
   content: '';
   position: absolute;
-  right: 148px;
   top: 50%;
   transform: translateY(-50%);
   width: 31px;
   height: 28px;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   transition: opacity 0.3s ease;
 }
 
@@ -287,7 +302,6 @@ dialog::backdrop {
 .dialog {
   width: 100%;
   max-width: 353px;
-  max-height: 191px;
   border: solid 2px black;
   padding: 30px;
 }
@@ -303,6 +317,7 @@ dialog::backdrop {
   font-size: 14px;
   width: 100%;
   max-width: 234px;
+  line-height: 150%;
 }
 
 .ok_button {
@@ -312,19 +327,67 @@ dialog::backdrop {
 }
 
 @media (width <=375px) {
+  .header {
+    padding-block: 120px;
+  }
+
   .title_card {
-    max-width: 300px;
+    max-width: 303px;
     width: 100%;
+    font-size: 18px;
+  }
+
+  .title {
+    font-size: 49px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+
+  .text_card {
+    font-size: 18px;
+  }
+
+  .text-card_container {
+    padding-block-start: 25px;
   }
 
   .save_button {
     display: flex;
     flex-direction: column;
+    max-width: 306px;
+  }
+
+  .button-save_text {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 14px;
+    right: 13px;
+  }
+  
+  .card__like-button {
+    padding-inline: 39px;
+  }
+
+  .card__actions {
+    padding-block: 24px;
+  }
+
+  .floppy_icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .dialog-content {
+    padding-block-end: 30px;
   }
 }
 
 .core {
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.03s;
 }
 
 .main-body {
