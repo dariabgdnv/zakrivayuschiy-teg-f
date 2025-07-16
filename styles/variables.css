@@ -20,8 +20,7 @@
   --subtitle-size-mobile: clamp(0.75rem, 1.5vw + 0.25rem, 0.875rem);
   --content-width: clamp(18.75rem, 85vw, 43.75rem);
   --label-text-color: black;
-  /* --label-stroke-color: solid 1px white;  */
-  --label-stroke-color: white; 
+  --label-stroke-color: white;
   --label-bg-color: transparent;
   --label-opacity: 0.9;
   --linear-gradient-bg:

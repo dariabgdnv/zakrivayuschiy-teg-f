@@ -68,7 +68,7 @@
   width: calc(100% + 40px);
   padding: 3px 0 3px 0;
   margin-left: -15px;
-  font-variation-settings: var(--font-weight-bold);
+  font-variation-settings: "wght" var(--font-weight-bold);
 }
 
 .card {
@@ -134,7 +134,7 @@
 
 .text_card {
   font-size: var(--main-font-size);
-  font-variation-settings: var(--font-weight-normal);
+  font-variation-settings: "wght" var(--font-weight-normal);
 }
 
 .label {
@@ -231,6 +231,8 @@
 }
 
 .card__like-button {
+  /* box-sizing: border-box;
+  min-width: max-content; */
   display: flex;
   align-items: center;
   padding: 11px 35px;
@@ -240,6 +242,11 @@
 
 .card__like-button:focus-visible {
   border-color: black;
+}
+
+.card__like-button:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .button__icon-like {
@@ -267,8 +274,16 @@
   transform: translateY(-50%);
   width: 31px;
   height: 28px;
-  /* border: 2px solid black; */
   transition: opacity 0.3s ease;
+}
+
+.card__like-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 0 black;
 }
 
 .save_button {
@@ -324,6 +339,15 @@ dialog::backdrop {
   width: 100%;
   max-width: 293px;
   padding: 12px 132px;
+  box-shadow: none;
+}
+
+.ok_button:focus {
+  box-shadow: none;
+}
+
+.ok_button:focus-visible {
+  box-shadow: 2px 2px 0 0 black;
 }
 
 @media (width <=375px) {
@@ -368,6 +392,10 @@ dialog::backdrop {
     right: 13px;
   }
 
+  .button__text {
+    font-size: 14px;
+  }
+
   .card__like-button {
     padding-inline: 39px;
   }
@@ -382,7 +410,25 @@ dialog::backdrop {
   }
 
   .dialog-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .dialog-content .floppy_icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .dialog-content {
     padding-block-end: 30px;
+  }
+
+  .ok_button:focus-visible {
+    box-shadow: none;
+  }
+
+  .save_button:focus {
+    box-shadow: none;
   }
 }
 
@@ -391,7 +437,7 @@ dialog::backdrop {
 }
 
 .main-body {
-  transition: fill 0.3s linear 0.05s;
+  transition: fill 0.3s linear;
 }
 
 .contour {
@@ -405,10 +451,12 @@ dialog::backdrop {
 
 .like-icon:hover .core {
   fill: var(--animation-fill-color);
+  transition-delay: 0s
 }
 
 .like-icon:hover .main-body {
   fill: var(--animation-fill-color);
+  transition-delay: 0.05s;
 }
 
 .like-icon:hover .contour {
@@ -421,10 +469,12 @@ dialog::backdrop {
 
 .like-icon:active .core {
   fill: var(--active-fill-color, red);
+  transition-delay: 0s;
 }
 
 .like-icon:active .main-body {
   fill: var(--active-fill-color, red);
+  transition-delay: 0.05s;
 }
 
 .like-icon:active .contour {
