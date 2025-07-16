@@ -41,6 +41,7 @@
 .title {
   font-family: var(--font-family-accent);
   font-size: var(--title-size);
+  
 }
 
 .subtitle {
@@ -231,9 +232,9 @@
 }
 
 .card__like-button {
-  /* box-sizing: border-box;
-  min-width: max-content; */
+  max-inline-size: 130px;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 11px 35px;
   position: relative;
