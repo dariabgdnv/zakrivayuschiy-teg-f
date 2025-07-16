@@ -240,10 +240,6 @@
   transition: border-color 0.3s ease;
 }
 
-.card__like-button:focus-visible {
-  border-color: black;
-}
-
 .card__like-button:active {
   outline: none;
   box-shadow: none;
